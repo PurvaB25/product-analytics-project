@@ -6,7 +6,7 @@ SELECT
     year,
     country,
     platform,
-    COUNT(DISTINCT d.user_id) AS mau_28d
+    COUNT(DISTINCT d.user_id) AS wau
 FROM
     dev.public.date_week_quater d
 JOIN (

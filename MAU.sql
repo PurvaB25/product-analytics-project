@@ -1,4 +1,4 @@
-CREATE table WAU as 
+CREATE table MAU as 
 SELECT
     d.date,
     week,
@@ -6,7 +6,7 @@ SELECT
     year,
     country,
     platform,
-    COUNT(DISTINCT d.user_id) AS wau
+    COUNT(DISTINCT d.user_id) AS mau_28d
 FROM
     dev.public.date_week_quater d
 JOIN (
@@ -19,7 +19,7 @@ JOIN (
         date,
         user_id
 ) t ON d.date >= t.date
-    AND d.date <= t.date + INTERVAL '6 days'
+    AND d.date <= t.date + INTERVAL '27 days'
 GROUP BY
     d.date,
     week,
